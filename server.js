@@ -127,8 +127,8 @@ function setupApp(conn) {
             console.log('sending histo chunk', chunkHistos.length, chunk.chunkIdx);
             socket.emit('histo_chunk', {
               chunkIdx: parseInt(chunk.chunkIdx),
-              // histos: chunkHistos
-              histos: []
+              histos: chunkHistos // overwhelms the browser!
+              // histos: []
             });
           }, (err) => { throw err });
         }
