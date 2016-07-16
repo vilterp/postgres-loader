@@ -9,6 +9,8 @@ conn = psycopg2.connect('dbname=loader_test user=blist')
 cur = conn.cursor()
 
 print sys.argv
+if sys.argv.length != 2:
+  print 'path to ldjson file plz'
 
 row_idx = 0
 for line in open(sys.argv[1]):
